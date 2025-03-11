@@ -1,12 +1,10 @@
 import streamlit as st
 from langchain_groq import ChatGroq
-import os
+import streamlit as st
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 
-groq_api_key = os.getenv("GROQ_API_KEY")
-if not groq_api_key:
-    st.error("API key for Groq is not set in environment variables")
-    st.stop()
+
+groq_api_key = st.secrets["api"]
 
 response_schema = [
     ResponseSchema(name="Yoruba translation", description="This is the Yoruba translation of the user's English input")
