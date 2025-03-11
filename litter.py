@@ -4,7 +4,7 @@ import streamlit as st
 from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 
 
-groq_api_key = st.secrets["api"]
+groq_api_key = st.secrets["API"]
 
 response_schema = [
     ResponseSchema(name="Yoruba translation", description="This is the Yoruba translation of the user's English input")
@@ -32,7 +32,7 @@ def translator(query):
         return f"Parsing failed: {e}"
 
 st.title("English to Yoruba Translator")
-st.markdown("Enter an English sentence, and the AI will translate it into Yoruba.")
+st.markdown("Enter an English sentence")
 
 user_input = st.text_area("Enter text in English:", "")
 
